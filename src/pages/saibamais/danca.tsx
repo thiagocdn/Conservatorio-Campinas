@@ -5,18 +5,18 @@ interface ParagraphProps {
   text: string;
 }
 
-interface ButtonProps {
-  text: string;
-  href: string;
-  layoutId: string;
-}
-
 const Paragraph: React.FC<ParagraphProps> = ({ text }) => {
   return(
     <p className="w-full text-white p-4 text-justify" style={{textIndent: '20px'}}>
       {text}
     </p>
   )
+}
+
+interface ButtonProps {
+  text: string;
+  href: string;
+  layoutId: string;
 }
 
 const Button: React.FC<ButtonProps> = ({ text, href, layoutId }) => {

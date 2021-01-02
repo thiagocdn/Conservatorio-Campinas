@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import Lottie from "react-lottie";
 import ballerina from './assets/ballerina.json';
 
@@ -142,7 +141,7 @@ export default function Home() {
 
       <motion.div
         layoutId="team_bg"
-        className="bg-gray-900 bg-opacity-40 px-4 mt-8 sm:px-8 rounded-xl"
+        className="bg-gray-900 bg-opacity-40 px-4 pb-6 mt-8 sm:px-8 rounded-xl"
       >
       <Paragraph
           text="CONSERVATÓRIO CAMPINAS  conta com professores com alto nível de profissionalismo e conhecimento das técnicas de dança que lecionam. Conheça um pouco mais sobre cada professor e veja seu currículo completo:"
@@ -164,32 +163,11 @@ export default function Home() {
             layoutId="priscila_vargas"
           />
           <Card
-            name="Amanda Moro Cardillo"
-            position="Professora de Baby Class e Ballet Cláassico"
-            href="/corpo_docente/amanda_cardillo"
-            imgSrc="/assets/corpo_docente/amanda_cardillo.webp"
-            layoutId="amanda_cardillo"
-          />
-          <Card
             name="Alex Lima"
             position="Professor de Contemporâneo"
             href="/corpo_docente/alex_lima"
             imgSrc="/assets/corpo_docente/alex_lima.webp"
             layoutId="alex_lima"
-          />
-          <Card
-            name="Déborah Dias"
-            position="Professora de Hip Hop"
-            href="/corpo_docente/deborah_dias"
-            imgSrc="/assets/corpo_docente/deborah_dias.webp"
-            layoutId="deborah_dias"
-          />
-          <Card
-            name="Fabiane Benetti"
-            position="Professora de Ballet Clássico"
-            href="/corpo_docente/fabiane_benetti"
-            imgSrc="/assets/corpo_docente/fabiane_benetti.webp"
-            layoutId="fabiane_benetti"
           />
           <Card
             name="Fernanda Dias"
@@ -227,25 +205,11 @@ export default function Home() {
             layoutId="priscilla_soares"
           />
           <Card
-            name="Renata Marialva"
-            position="Professora de Ballet Clássico"
-            href="/corpo_docente/renata_marialva"
-            imgSrc="/assets/corpo_docente/renata_marialva.webp"
-            layoutId="renata_marialva"
-          />
-          <Card
             name="Auana Angeli"
             position="Professora de Tecido Acrobático"
             href="/corpo_docente/auana_angeli"
             imgSrc="/assets/corpo_docente/auana_angeli.webp"
             layoutId="auana_angeli"
-          />
-          <Card
-            name="Douglas Barroso"
-            position="Professor de Tecido, Lira e Trapézio"
-            href="/corpo_docente/douglas_barroso"
-            imgSrc="/assets/corpo_docente/douglas_barroso.webp"
-            layoutId="douglas_barroso"
           />
           <Card
             name="Simone Thibes"
@@ -274,13 +238,6 @@ export default function Home() {
             href="/corpo_docente/quilder_paula"
             imgSrc="/assets/corpo_docente/quilder_paula.webp"
             layoutId="quilder_paula"
-          />
-          <Card
-            name="Rodrigo Santos"
-            position="Professor de Violão, Guitarra, CB elétrico e Cavaquinho"
-            href="/corpo_docente/rodrigo_santos"
-            imgSrc="/assets/corpo_docente/rodrigo_santos.webp"
-            layoutId="rodrigo_santos"
           />
           <Card
             name="Samuel Valli"

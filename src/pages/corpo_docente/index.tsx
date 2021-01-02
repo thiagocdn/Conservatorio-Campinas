@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { GetStaticProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Lottie from "react-lottie";
@@ -11,6 +12,17 @@ interface CardProps {
   layoutId: string;
   name: string;
   position: string;
+}
+
+interface IProfessor {
+  id: string;
+  name: string;
+  position: string;
+  resume: string[];
+}
+
+interface ProfessorsProps {
+  professors: IProfessor[];
 }
 
 const Card: React.FC<CardProps> = ({ href, imgSrc, layoutId, name, position }) => {
@@ -46,7 +58,15 @@ const Paragraph: React.FC<ParagraphProps> = ({ text }) => {
   )
 }
 
-export default function Home() {
+export default function Home({ professors }: ProfessorsProps) {
+
+  if(!professors){
+    return(
+      <div>
+        <h1>ERRO NO SERVIDOR, TENTE NOVAMENTE MAIS TARDE.</h1>
+      </div>
+    )
+  }
 
   return (
     <div>
@@ -148,142 +168,33 @@ export default function Home() {
         />
         <div className="mt-2 md:mt-8 grid w-full gap-8 grid-cols-2 sm:grid-cols-4 lg:grid-cols-5">
           
-          <Card
-            name="Daniel Faria"
-            position="Coordenador de Iniciação Artistica e Professor de Circo e Teatro"
-            href="/corpo_docente/daniel_faria"
-            imgSrc="/assets/corpo_docente/daniel_faria.webp"
-            layoutId="daniel_faria"
-          />
-          <Card
-            name="Priscila Vargas"
-            position="Coordenadora de Dança e Professora de Jazz"
-            href="/corpo_docente/priscila_vargas"
-            imgSrc="/assets/corpo_docente/priscila_vargas.webp"
-            layoutId="priscila_vargas"
-          />
-          <Card
-            name="Alex Lima"
-            position="Professor de Contemporâneo"
-            href="/corpo_docente/alex_lima"
-            imgSrc="/assets/corpo_docente/alex_lima.webp"
-            layoutId="alex_lima"
-          />
-          <Card
-            name="Fernanda Dias"
-            position="Professora de Jazz e Hip Hop"
-            href="/corpo_docente/fernanda_dias"
-            imgSrc="/assets/corpo_docente/fernanda_dias.webp"
-            layoutId="fernanda_dias"
-          />
-          <Card
-            name="Gabrielli Nascimento"
-            position="Professora de Jazz"
-            href="/corpo_docente/gabrielli_nascimento"
-            imgSrc="/assets/corpo_docente/gabrielli_nascimento.webp"
-            layoutId="gabrielli_nascimento"
-          />
-          <Card
-            name="Giovanna Alves"
-            position="Professora de Dança Irlandesa"
-            href="/corpo_docente/giovanna_alves"
-            imgSrc="/assets/corpo_docente/giovanna_alves.webp"
-            layoutId="giovanna_alves"
-          />
-          <Card
-            name="Mariana Tanibata"
-            position="Professora de Jazz e Dança para Teatro Musical"
-            href="/corpo_docente/mariana_tanibata"
-            imgSrc="/assets/corpo_docente/mariana_tanibata.webp"
-            layoutId="mariana_tanibata"
-          />
-          <Card
-            name="Priscilla Soares"
-            position="Professora de Sapateado Americano e Dança Irlandesa"
-            href="/corpo_docente/priscilla_soares"
-            imgSrc="/assets/corpo_docente/priscilla_soares.webp"
-            layoutId="priscilla_soares"
-          />
-          <Card
-            name="Auana Angeli"
-            position="Professora de Tecido Acrobático"
-            href="/corpo_docente/auana_angeli"
-            imgSrc="/assets/corpo_docente/auana_angeli.webp"
-            layoutId="auana_angeli"
-          />
-          <Card
-            name="Simone Thibes"
-            position="Professora de Artes Plásticas"
-            href="/corpo_docente/simone_thibes"
-            imgSrc="/assets/corpo_docente/simone_thibes.webp"
-            layoutId="simone_thibes"
-          />
-          <Card
-            name="Diógines Cândido"
-            position="Professor de Canto e Violino"
-            href="/corpo_docente/diogines_candido"
-            imgSrc="/assets/corpo_docente/diogines_candido.webp"
-            layoutId="diogines_candido"
-          />
-          <Card
-            name="Leandro Gomes"
-            position="Professor de Flauta Doce e Transversal"
-            href="/corpo_docente/leandro_gomes"
-            imgSrc="/assets/corpo_docente/leandro_gomes.webp"
-            layoutId="leandro_gomes"
-          />
-          <Card
-            name="Quilder de Paula"
-            position="Professor de Violão, Canto, Piano, Contra-Baixo e Musicalização Infantil"
-            href="/corpo_docente/quilder_paula"
-            imgSrc="/assets/corpo_docente/quilder_paula.webp"
-            layoutId="quilder_paula"
-          />
-          <Card
-            name="Samuel Valli"
-            position="Professor de Canto e Técnica Vocal"
-            href="/corpo_docente/samuel_valli"
-            imgSrc="/assets/corpo_docente/samuel_valli.webp"
-            layoutId="samuel_valli"
-          />
-          <Card
-            name="Yuri Zanotti"
-            position="Professor de Piano e Teclado"
-            href="/corpo_docente/yuri_zanotti"
-            imgSrc="/assets/corpo_docente/yuri_zanotti.webp"
-            layoutId="yuri_zanotti"
-          />
-          <Card
-            name="Dirceu de Carvalho"
-            position="Professor de Teatro"
-            href="/corpo_docente/dirceu_carvalho"
-            imgSrc="/assets/corpo_docente/dirceu_carvalho.webp"
-            layoutId="dirceu_carvalho"
-          />
-          <Card
-            name="Anderson Ramos"
-            position="Professor de Saxofone"
-            href="/corpo_docente/anderson_ramos"
-            imgSrc="/assets/corpo_docente/anderson_ramos.webp"
-            layoutId="anderson_ramos"
-          />
-          <Card
-            name="Érika Carmo"
-            position="Professora de Pilates"
-            href="/corpo_docente/erika_carmo"
-            imgSrc="/assets/corpo_docente/erika_carmo.webp"
-            layoutId="erika_carmo"
-          />
-          <Card
-            name="Letícia da Silva"
-            position="Professora de Pilates"
-            href="/corpo_docente/leticia_silva"
-            imgSrc="/assets/corpo_docente/leticia_silva.webp"
-            layoutId="leticia_silva"
-          />
+          { professors.map(professor => (
+
+            <Card
+              name={professor.name}
+              position={professor.position}
+              href={`/corpo_docente/${professor.id}`}
+              imgSrc={`/assets/corpo_docente/${professor.id}.webp`}
+              layoutId={`${professor.id}`}
+            />
+
+          ))}
         </div>
       </motion.div>
 
     </div>
   )
 }
+
+
+export const getStaticProps: GetStaticProps<ProfessorsProps> = async (context) => {
+  const { professors } = await require('../../data');
+  
+  return {
+    props: {
+      professors
+    },
+    revalidate: 600,
+   }
+}
+

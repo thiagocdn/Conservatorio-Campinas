@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import SEO from "../components/SEO";
 
 
 interface CardProps {
@@ -110,6 +111,12 @@ export default function Home() {
 
   return (
     <div>
+      <SEO
+        title="Conservatório Campinas - Website"
+        shoudExcludeTitleSufix
+        description="Consersatório de Artes na cidade de Campinas SP contando com uma infraestrutura completa para o desenvolvimento de Danças, Músicas, Artes Cênicas, Canto, Artes Plásticas, entre outros. Venha nos conhecer!"
+      />
+
       <div>
         <Carousel showArrows={true} showThumbs={false} autoPlay={true} showStatus={false} infiniteLoop={true}>
           { carouselImages.map((item) => {

@@ -29,6 +29,10 @@ const Card: React.FC<CardProps> = ({ href, imgSrc, layoutId, name, position }) =
   return (
     <Link href={href}>
       <motion.div
+        whileHover={{ scale: 1.2 }}
+        whileTap={{
+          scale: 0.8,
+        }}
         layoutId={layoutId}
       >
         <div className="relative bg-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition">

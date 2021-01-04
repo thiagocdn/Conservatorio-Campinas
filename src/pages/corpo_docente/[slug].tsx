@@ -25,6 +25,18 @@ const Card: React.FC<CardProps> = ({ href, imgSrc, layoutId, name, position }) =
   return (
     <Link href={href}>
       <motion.div
+        initial={{ rotate: 0, }}
+        animate={{
+          x: 0,
+          y: 0,
+          scale: 1,
+          rotate: 360,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 260,
+          damping: 10
+        }}
         layoutId={layoutId}
         className="w-40"
       >

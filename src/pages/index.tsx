@@ -32,7 +32,7 @@ const CardRight: React.FC<CardProps> = ({ href, imgSrc, layoutId, name, list }) 
           { list.map(item => <span key={item} className="text-center">{item}</span>) }
         </div>
 
-        <a className="absolute bottom-2 left-2 bg-gray-900 text-gray-50 px-1 py-1 text-sm font-semibold rounded-md hover:bg-gray-700 transition">
+        <a className="absolute text-center text-lg -bottom-8 right-2 bg-gray-200 text-gray-900 px-3 py-1 text-sm font-semibold rounded-md hover:bg-gray-700 transition">
           Saiba mais
         </a>
 
@@ -58,8 +58,7 @@ const CardLeft: React.FC<CardProps> = ({ href, imgSrc, layoutId, name, list }) =
           </div>
         </motion.div>
 
-
-        <a className="absolute bottom-2 right-2 bg-gray-900 text-gray-50 px-1 py-1 text-sm font-semibold rounded-md hover:bg-gray-700 transition">
+        <a className="absolute text-center text-lg -bottom-8 right-2 bg-gray-200 text-gray-900 px-3 py-1 text-sm font-semibold rounded-md hover:bg-gray-700 transition">
           Saiba mais
         </a>
 
@@ -82,8 +81,7 @@ const CardFull: React.FC<CardProps> = ({ href, imgSrc, layoutId, name, list }) =
           </div>
         </motion.div>
 
-
-        <a className="absolute bottom-2 right-2 bg-gray-900 text-gray-50 px-1 py-1 text-sm font-semibold rounded-md hover:bg-gray-700 transition">
+        <a className="absolute text-center text-lg -bottom-8 right-2 bg-gray-200 text-gray-900 px-3 py-1 text-sm font-semibold rounded-md hover:bg-gray-700 transition">
           Saiba mais
         </a>
 
@@ -129,14 +127,53 @@ export default function Home() {
         </Carousel>
       </div>
 
-      <div className="flex relative justify-center mt-8 w-full max-w-lg m-auto">
-        <div className="absolute left-0 top-10 h-16 border-4 border-white w-1/3 h-" />
-        <div className="absolute top-4 h-28 border-4 border-white w-1/2 h-" />
-        <div className="absolute right-0 top-0 h-16 border-4 border-white w-1/3 h-" />
-        <Image src="/assets/home/arte.png" height={120} width={112} />
-      </div>
+      <motion.div
+        className="container flex relative justify-center mt-8 w-full max-w-lg m-auto"
+        variants={{
+          hidden: { opacity: 1, scale: 0 },
+          visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+              delayChildren: 1,
+              staggerChildren: 0.5,
+            }
+          },
+        }}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div
+          variants={{
+            hidden: { x: -20, opacity: 0 },
+            visible: { x: 0, opacity: 1 }
+          }}
+          className="item absolute left-0 top-10 h-16 border-4 border-white w-1/3 h-"
+        />
+        <motion.div
+          variants={{
+            hidden: { y: 20, opacity: 0 },
+            visible: { y: 0, opacity: 1 }
+          }}
+          className="item absolute top-4 h-28 border-4 border-white w-1/2 h-"
+        />
+        <motion.div
+          variants={{
+            hidden: { x: 20, opacity: 0 },
+            visible: { x: 0, opacity: 1 }
+          }}
+          className="item absolute right-0 top-0 h-16 border-4 border-white w-1/3 h-"
+        />
+        <motion.img
+          className="item z-10"
+          variants={{
+            hidden: { y: -20, opacity: 0 },
+            visible: { y: 0, opacity: 1 }
+          }}
+          src="/assets/home/arte.png" height={120} width={112} />
+      </motion.div>
 
-      <div className="mt-8 md:mt-12 grid w-full gap-8 grid-cols-1 md:grid-cols-2">
+      <div className="mt-8 md:mt-12 grid w-full gap-12 grid-cols-1 md:grid-cols-2">
         <CardRight
           name='DANÇA'
           list={['Jazz',

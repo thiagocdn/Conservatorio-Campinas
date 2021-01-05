@@ -88,11 +88,11 @@ const Footer: React.FC = () => {
           <FaYoutube className="cursor-pointer" onClick={handleYoutube} color="#9E251F" size={30} />
         </div>
       </div>
-      <div className="flex w-full justify-around m-auto items-center w-full max-w-screen-lg justify-between">
+      <div className="flex w-full justify-around m-auto items-center w-full max-w-screen-lg justify-between p-2">
         <p
           className="font-bold text-xs sm:text-sm"
           style={{color: '#9E251F'}}
-        >conservatoriocampinas@gmail.com</p>
+        >contato@conservatoriocampinas.com</p>
       </div>
     </footer>
   )

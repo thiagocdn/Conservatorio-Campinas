@@ -102,48 +102,88 @@ const Header: React.FC = () => {
       
       { showMenu && (
         <motion.div
-          initial={{ y: '-200%' }}
-          animate={{ y: 0 }}
-          transition={{ delay: 0.1, duration: 0.5 }}
+          variants={{
+            hidden: { opacity: 1, scale: 0 },
+            visible: {
+              opacity: 1,
+              scale: 1,
+              transition: {
+                delayChildren: 0.2,
+                staggerChildren: 0.2,
+              }
+            },
+          }}
+          initial="hidden"
+          animate="visible"
           className="flex lg:hidden h-full justify-center items-center"
         >
             
           <div className="flex flex-col justify-between w-full items-center">
-            <button
+            <motion.button
+              variants={{
+                hidden: { x: -20, opacity: 0 },
+                visible: { x: 0, opacity: 1 }
+              }}
               className="p-2 my-1 mt-8"
               onClick={() => { handleClickMenu('')}}
-            >Inicio</button>
+            >Inicio</motion.button>
 
-            <button
+            <motion.button
+              variants={{
+                hidden: { x: -20, opacity: 0 },
+                visible: { x: 0, opacity: 1 }
+              }}
               className="p-2 my-1"
               onClick={() => { handleClickMenu('nossa_historia')}}
-            >Nossa Historia</button>
+            >Nossa Historia</motion.button>
 
-            <button
+            <motion.button
+              variants={{
+                hidden: { x: -20, opacity: 0 },
+                visible: { x: 0, opacity: 1 }
+              }}
               className="p-2 my-1"
               onClick={() => { handleClickMenu('corpo_docente')}}
-            >Corpo Docente</button>
+            >Corpo Docente</motion.button>
 
-            <button
+            <motion.button
+              variants={{
+                hidden: { x: -20, opacity: 0 },
+                visible: { x: 0, opacity: 1 }
+              }}
               className="p-2 my-1"
               onClick={() => { handleClickMenu('modalidades')}}
-            >Modalidades</button>
+            >Modalidades</motion.button>
 
-            <button
+            <motion.button
+              variants={{
+                hidden: { x: -20, opacity: 0 },
+                visible: { x: 0, opacity: 1 }
+              }}
               className="p-2 my-1"
               onClick={() => { handleClickMenu('galeria_de_fotos')}}
-            >Galeria de Fotos</button>
+            >Galeria de Fotos</motion.button>
 
-            <button 
+            <motion.button 
+              variants={{
+                hidden: { x: -20, opacity: 0 },
+                visible: { x: 0, opacity: 1 }
+              }}
               className="p-2 my-1 mb-8"
               onClick={() => { handleClickMenu('contato')}}
-            >Contato</button>
+            >Contato</motion.button>
 
-            <div className="flex justify-around w-full mb-4">
+            <motion.div
+              variants={{
+                hidden: { y: -20, opacity: 0 },
+                visible: { y: 0, opacity: 1 }
+              }}
+              className="flex justify-around w-full mb-4"
+            >
               <FaInstagramSquare className="cursor-pointer" onClick={handleInstagram} color="#9E251F" size={30} />
               <FaFacebookF className="cursor-pointer" onClick={handleFacebook}  color="#9E251F" size={30} />
               <FaYoutube className="cursor-pointer" onClick={handleYoutube} color="#9E251F" size={30} />
-            </div>
+            </motion.div>
 
             <div className="h-screen"/>
 

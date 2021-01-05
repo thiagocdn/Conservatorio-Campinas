@@ -32,7 +32,7 @@ const CardRight: React.FC<CardProps> = ({ href, imgSrc, layoutId, name, list }) 
           { list.map(item => <span key={item} className="text-center">{item}</span>) }
         </div>
 
-        <a className="absolute text-center text-lg -bottom-8 right-2 bg-gray-200 text-gray-900 px-3 py-1 text-sm font-semibold rounded-md hover:bg-gray-700 transition">
+        <a className="absolute shadow-md text-center text-lg -bottom-8 right-2 bg-gray-200 text-gray-900 px-3 py-1 text-sm font-semibold rounded-md hover:bg-gray-300 transition">
           Saiba mais
         </a>
 
@@ -58,7 +58,7 @@ const CardLeft: React.FC<CardProps> = ({ href, imgSrc, layoutId, name, list }) =
           </div>
         </motion.div>
 
-        <a className="absolute text-center text-lg -bottom-8 right-2 bg-gray-200 text-gray-900 px-3 py-1 text-sm font-semibold rounded-md hover:bg-gray-700 transition">
+        <a className="absolute shadow-md text-center text-lg -bottom-8 right-2 bg-gray-200 text-gray-900 px-3 py-1 text-sm font-semibold rounded-md hover:bg-gray-300 transition">
           Saiba mais
         </a>
 
@@ -81,7 +81,7 @@ const CardFull: React.FC<CardProps> = ({ href, imgSrc, layoutId, name, list }) =
           </div>
         </motion.div>
 
-        <a className="absolute text-center text-lg -bottom-8 right-2 bg-gray-200 text-gray-900 px-3 py-1 text-sm font-semibold rounded-md hover:bg-gray-700 transition">
+        <a className="absolute shadow-md text-center text-lg -bottom-8 right-2 bg-gray-200 text-gray-900 px-3 py-1 text-sm font-semibold rounded-md hover:bg-gray-300 transition">
           Saiba mais
         </a>
 
@@ -207,8 +207,8 @@ export default function Home() {
             'Música / Coral',
             'Expressão Corporal',
             'Circo',
-            'Aéreos / Tecido / Lira',
-            'Trapézio',
+            'Aéreos / Tecido',
+            'Lira / Trapézio',
             'Artes Plásticas',
           ]}
           href="/saibamais/iniciacaoartistica"

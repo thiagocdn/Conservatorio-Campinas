@@ -31,7 +31,7 @@ const Card: React.FC<CardProps> = ({ href, imgSrc, layoutId, name, position }) =
       <motion.div
         whileHover={{ scale: 1.2 }}
         whileTap={{
-          scale: 0.8,
+          scale: 0.9,
         }}
         layoutId={layoutId}
       >
@@ -170,11 +170,12 @@ export default function Home({ professors }: ProfessorsProps) {
       <Paragraph
           text="CONSERVATÓRIO CAMPINAS  conta com professores com alto nível de profissionalismo e conhecimento das técnicas de dança que lecionam. Conheça um pouco mais sobre cada professor e veja seu currículo completo:"
         />
-        <div className="mt-2 md:mt-8 grid w-full gap-8 grid-cols-2 sm:grid-cols-4 lg:grid-cols-5">
+        <div className="mt-2 md:mt-8 grid w-full gap-4 justify-center" style={{ gridTemplateColumns: 'repeat(auto-fill, 120px)'}}>
           
           { professors.map(professor => (
 
             <Card
+              key={professor.id}
               name={professor.name}
               position={professor.position}
               href={`/corpo_docente/${professor.id}`}

@@ -3,6 +3,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import { useCallback, useState } from "react";
+import Link from "next/link";
 
 interface IPhotos {
     caption?: string;
@@ -14,6 +15,7 @@ interface IPhotos {
 interface GalleryProps {
   id: string;
   name: string;
+  year_name: string;
   photos: IPhotos[];
 }
 
@@ -41,14 +43,38 @@ export default function Gallery_Photos(photos: GalleryProps | null) {
   };
   return (
     <div>
-      
+    
+    <div className="mb-8 md:flex md:justify-between md:align-center">
+      <div>
+        <h1 className="text-4xl tracking-wide text-gray-50 font-bold">{photos.name}</h1>
+        <h2 className="text-xl text-gray-100">{photos.year_name}</h2>
+      </div>
 
-    <div>
+      
+      <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          className="mt-8"
+        >
+          <Link href="/galeria_de_fotos">
+            <a className="bg-gray-900 text-gray-50 px-6 py-3 text-lg font-semibold rounded-xl hover:bg-gray-700 transition">
+              Voltar
+            </a>
+          </Link>
+      </motion.div>
+    </div>
+
+    <motion.div
+      layoutId={photos.id}
+      className="cursor-pointer bg-gray-900 bg-opacity-40 rounded-xl p-4 mt-4"
+    >
       <Gallery photos={photos.photos} onClick={openLightbox} />
       <ModalGateway>
         {viewerIsOpen ? (
           <Modal onClose={closeLightbox}>
             <Carousel
+
               currentIndex={currentImage}
               views={photos.photos.map(x => ({
                 ...x,
@@ -60,7 +86,7 @@ export default function Gallery_Photos(photos: GalleryProps | null) {
           </Modal>
         ) : null}
       </ModalGateway>
-    </div>
+    </motion.div>
 
       
     </div>
@@ -96,6 +122,7 @@ export const getStaticProps: GetStaticProps<GalleryProps> = async (context) => {
     props: {
       id: photos ? photos.id : null,
       name: photos ? photos.name : null,
+      year_name: photos ? photos.year_name : null,
       photos: photos ? photos.photos : null,
     },
     revalidate: 60,

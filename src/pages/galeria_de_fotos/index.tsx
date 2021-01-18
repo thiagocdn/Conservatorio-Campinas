@@ -7,39 +7,39 @@ interface CardProps {
   imgSrc: string;
   layoutId: string;
   name: string;
-  position: string;
+  year_name: string;
 }
 
-interface IProfessor {
+interface IPhotos {
   id: string;
   name: string;
-  position: string;
-  resume: string[];
+  year_name: string;
+  front_image: string;
 }
 
-interface ProfessorsProps {
-  professors: IProfessor[];
+interface PhotosProps {
+  photosDataBase: IPhotos[];
 }
 
-const Card: React.FC<CardProps> = ({ href, imgSrc, layoutId, name, position }) => {
+const Card: React.FC<CardProps> = ({ href, imgSrc, layoutId, name, year_name }) => {
   return (
     <Link href={href}>
       <motion.div
+        layoutId={layoutId}
         whileHover={{scale: 1.05}}
         className="cursor-pointer bg-gray-900 bg-opacity-40 rounded-xl"
       >
         <div>
           <motion.div
-            layoutId={layoutId}
             className="p-4"
           >
             <div className="flex flex-col items-center">
               <span className="text-center text-lg text-gray-100 font-medium mt-1">{name}</span>
-              <span className="text-center text-sm text-gray-100 font-medium my-1">{name}</span>
+              <span className="text-center text-sm text-gray-100 font-medium my-1">{year_name}</span>
             </div>
             <div className="rounded-xl cursor-pointer hover:bg-gray-50 transition">
               <img
-                className="w-full rounded-xl"
+                className="w-full rounded-xl h-60 object-cover"
                 src={imgSrc}
                 />
             </div>
@@ -51,9 +51,9 @@ const Card: React.FC<CardProps> = ({ href, imgSrc, layoutId, name, position }) =
   )
 }
 
-export default function Home({ professors }: ProfessorsProps) {
+export default function Home({ photosDataBase }: PhotosProps) {
 
-  if(!professors){
+  if(!photosDataBase){
     return(
       <div>
         <h1>ERRO NO SERVIDOR, TENTE NOVAMENTE MAIS TARDE.</h1>
@@ -79,17 +79,17 @@ export default function Home({ professors }: ProfessorsProps) {
       </motion.div>
 
           
-      <div className="mt-2 md:mt-8 grid w-full gap-4 justify-center" style={{ gridTemplateColumns: 'repeat(auto-fill, 260px)'}}>
+      <div className="mt-8 md:mt-8 grid w-full gap-4 justify-center" style={{ gridTemplateColumns: 'repeat(auto-fill, 260px)'}}>
           
-      { professors.map(professor => (
+      { photosDataBase.map(album => (
         
         <Card
-          key={professor.id}
-          name={professor.name}
-          position={professor.position}
-          href={`/corpo_docente/${professor.id}`}
-          imgSrc={`/assets/corpo_docente/${professor.id}.webp`}
-          layoutId={`${professor.id}`}
+          key={album.id}
+          name={album.name}
+          year_name={album.year_name}
+          href={`/galeria_de_fotos/${album.id}`}
+          imgSrc={album.front_image}
+          layoutId={`${album.id}`}
         />
       ))}
 
@@ -100,12 +100,12 @@ export default function Home({ professors }: ProfessorsProps) {
 }
 
 
-export const getStaticProps: GetStaticProps<ProfessorsProps> = async (context) => {
-  const { professors } = await require('../../data');
+export const getStaticProps: GetStaticProps<PhotosProps> = async (context) => {
+  const { photosDataBase } = await require('../../data');
   
   return {
     props: {
-      professors
+      photosDataBase
     },
     revalidate: 600,
    }

@@ -165,105 +165,137 @@ export const professors = [
 
 export const photosDataBase = [
   {
-    id: 'festival_2019',
-    name: 'Test',
+    id: "festival_2018",
+    name: "Malévola",
+    year_name: "Festival 2018",
+    front_image: "/assets/galeria_de_fotos/festival_2018/001.webp",
     photos: [
       {
-        src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
-        width: 4,
-        height: 3
+        src: "/assets/galeria_de_fotos/festival_2018/001.webp",
+        width: 1,
+        height: 2
       },
       {
-        src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
+        src: "/assets/galeria_de_fotos/festival_2018/002.webp",
         width: 1,
         height: 1
       },
       {
-        src: "https://source.unsplash.com/qDkso9nvCg0/600x799",
-        width: 3,
-        height: 4
+        src: "/assets/galeria_de_fotos/festival_2018/003.webp",
+        width: 1,
+        height: 1
       },
       {
-        src: "https://source.unsplash.com/iecJiKe_RNg/600x799",
-        width: 3,
-        height: 4
+        src: "/assets/galeria_de_fotos/festival_2018/004.webp",
+        width: 1,
+        height: 1
       },
       {
-        src: "https://source.unsplash.com/epcsn8Ed8kY/600x799",
-        width: 3,
-        height: 4
+        src: "/assets/galeria_de_fotos/festival_2018/005.webp",
+        width: 1,
+        height: 1
       },
       {
-        src: "https://source.unsplash.com/NQSWvyVRIJk/800x599",
-        width: 4,
-        height: 3
+        src: "/assets/galeria_de_fotos/festival_2018/006.webp",
+        width: 1,
+        height: 1
       },
       {
-        src: "https://source.unsplash.com/zh7GEuORbUw/600x799",
-        width: 3,
-        height: 4
+        src: "/assets/galeria_de_fotos/festival_2018/007.webp",
+        width: 1,
+        height: 1
       },
       {
-        src: "https://source.unsplash.com/PpOHJezOalU/800x599",
-        width: 4,
-        height: 3
+        src: "/assets/galeria_de_fotos/festival_2018/008.webp",
+        width: 1,
+        height: 2
       },
-      {
-        src: "https://source.unsplash.com/I1ASdgphUH4/800x599",
-        width: 4,
-        height: 3
-      }
     ]
   },
   {
-    id: 'festival_2018',
-    name: 'Test',
+    id: 'festival_2017',
+    name: "Wicked",
+    year_name: "Festival 2017",
+    front_image: "/assets/galeria_de_fotos/festival_2017/001.webp",
     photos: [
       {
-        src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
-        width: 4,
-        height: 3
-      },
-      {
-        src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
+        src: "/assets/galeria_de_fotos/festival_2017/001.webp",
         width: 1,
         height: 1
       },
       {
-        src: "https://source.unsplash.com/qDkso9nvCg0/600x799",
-        width: 3,
-        height: 4
+        src: "/assets/galeria_de_fotos/festival_2017/002.webp",
+        width: 1,
+        height: 1
       },
       {
-        src: "https://source.unsplash.com/iecJiKe_RNg/600x799",
-        width: 3,
-        height: 4
+        src: "/assets/galeria_de_fotos/festival_2017/003.webp",
+        width: 1,
+        height: 1
       },
       {
-        src: "https://source.unsplash.com/epcsn8Ed8kY/600x799",
-        width: 3,
-        height: 4
+        src: "/assets/galeria_de_fotos/festival_2017/004.webp",
+        width: 1,
+        height: 1
       },
       {
-        src: "https://source.unsplash.com/NQSWvyVRIJk/800x599",
-        width: 4,
-        height: 3
+        src: "/assets/galeria_de_fotos/festival_2017/005.webp",
+        width: 1,
+        height: 1
       },
       {
-        src: "https://source.unsplash.com/zh7GEuORbUw/600x799",
-        width: 3,
-        height: 4
+        src: "/assets/galeria_de_fotos/festival_2017/006.webp",
+        width: 1,
+        height: 1
+      },
+    ]
+  },
+  {
+    id: "festival_2016",
+    name: "A Magia dos Guardiões",
+    year_name: "Festival 2016",
+    front_image: "/assets/galeria_de_fotos/festival_2016/001.webp",
+    photos: [
+      {
+        src: "/assets/galeria_de_fotos/festival_2016/001.webp",
+        width: 1,
+        height: 1
       },
       {
-        src: "https://source.unsplash.com/PpOHJezOalU/800x599",
-        width: 4,
-        height: 3
+        src: "/assets/galeria_de_fotos/festival_2016/002.webp",
+        width: 1,
+        height: 1
       },
       {
-        src: "https://source.unsplash.com/I1ASdgphUH4/800x599",
-        width: 4,
-        height: 3
-      }
+        src: "/assets/galeria_de_fotos/festival_2016/003.webp",
+        width: 1,
+        height: 1
+      },
+      {
+        src: "/assets/galeria_de_fotos/festival_2016/004.webp",
+        width: 1,
+        height: 1
+      },
+      {
+        src: "/assets/galeria_de_fotos/festival_2016/005.webp",
+        width: 1,
+        height: 1
+      },
+      {
+        src: "/assets/galeria_de_fotos/festival_2016/006.webp",
+        width: 1,
+        height: 1
+      },
+      {
+        src: "/assets/galeria_de_fotos/festival_2016/007.webp",
+        width: 1,
+        height: 1
+      },
+      {
+        src: "/assets/galeria_de_fotos/festival_2016/008.webp",
+        width: 1,
+        height: 1
+      },
     ]
   },
 ];
